@@ -10,7 +10,7 @@ public class UnsetKthBit {
 
     public void unsetBitAt(int index){
 
-        this.n=(this.n ^(1<<index));
+        this.n=(this.n &(~(1<<index)));
     }
     public int getNumber(){
         return this.n;
@@ -18,6 +18,10 @@ public class UnsetKthBit {
 
   public static void main(String[] args) {
     //
-      UnsetKthBit unset=new UnsetKthBit()
+      UnsetKthBit unset=new UnsetKthBit(3);
+
+      unset.unsetBitAt(1);
+
+    System.out.println(unset.getNumber());
   }
 }
