@@ -1,4 +1,4 @@
-package karumanchi;
+package karumanchi.recursionBacktracking;
 
 public class TowersOfHanoi {
 
