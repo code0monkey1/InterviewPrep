@@ -6,7 +6,7 @@ public class CircularLinkedList {
 
     private CNode head;
 
-    public void printList(){
+    public  void printList(){
         CNode temp=head;
 
         if(head==null)return;
@@ -168,7 +168,7 @@ public class CircularLinkedList {
     myList.reversePrintList();
     }
 
-    private CNode getHead() {
+    public CNode getHead() {
         return head;
     }
 }

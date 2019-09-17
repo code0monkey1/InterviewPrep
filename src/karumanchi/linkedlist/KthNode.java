@@ -6,10 +6,10 @@ import java.util.ListIterator;
 
 public class KthNode {
 
-    public static int find(int k, LinkedList<Integer> list) {
+    public static int find(int k, LinkedList list) {
 
-        Node<Integer> i = list.getHead();
-        Node<Integer> j = list.getHead();
+        Node i = list.getHead();
+        Node j = list.getHead();
         while (true) {
 
             for (int m = 1;; ++m) {
@@ -25,7 +25,7 @@ public class KthNode {
     public static void main(String[] args) {
         //
 
-        LinkedList<Integer> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         for (int i =0; i < 14; i++){
             //

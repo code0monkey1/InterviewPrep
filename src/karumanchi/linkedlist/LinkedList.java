@@ -1,6 +1,8 @@
 package karumanchi.linkedlist;
 
-public class LinkedList<T> {
+import java.util.Objects;
+
+public class LinkedList {
     private Node head;
     private Node tail;
     private int index;
@@ -37,7 +39,7 @@ public class LinkedList<T> {
         this.index = -1;
     }
 
-    public void insert(T data) {
+    public void insert(int data) {
 
         Node newNode = new Node(data);
 
@@ -63,7 +65,7 @@ public class LinkedList<T> {
         ++this.index;
     }
 
-    public void insertAtIndex(T data, int index) {}
+    public void insertAtIndex(int data, int index) {}
 
     public Node delete(int index) {
         Node temp = head;
@@ -102,7 +104,7 @@ public class LinkedList<T> {
     public static void main(String[] args) {
         //
 
-        LinkedList<Integer> list = new LinkedList();
+        LinkedList list = new LinkedList();
         System.out.println("The size before the first element added is "+list.count());
         list.insert(2);
         System.out.println("The size after the first element added is "+list.count());
@@ -121,11 +123,11 @@ public class LinkedList<T> {
     }
 }
 
-class Node<T> {
+class Node {
     private Node nextNode;
-    private T data;
+    private int data;
 
-    public Node(T data) {
+    public Node(int  data) {
         this.data = data;
     }
 
@@ -137,9 +139,21 @@ class Node<T> {
         this.nextNode = nextNode;
     }
 
-    public T getData() {
+    public int getData() {
         return data;
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Node node = (Node) o;
+        return Objects.equals(data, node.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data);
+    }
 }
